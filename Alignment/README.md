@@ -11,6 +11,8 @@ Takes an input folder including only files with the extension *.fastq.gz
 
 IMPORTANT: files must be organized as _R1_001.fastq.gz for the forward read and _R2_001.fastq.gz for the reverse read.
 
+IMPORTANT: the code is currently optimized for Nextera adapters based on prior FastQC results. Specified by ./adapters/Nextera-Ad.fa on **line 86 of trim.py**. This needs to be changed to your given adapter.
+
 Will output folders: initial-fastqc, trimmed-paired, trimmed-unpaired, and final-fastqc.
 
 ### Alignment.py
