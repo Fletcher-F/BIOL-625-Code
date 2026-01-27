@@ -63,6 +63,7 @@ def alignment(args):
     os.mkdir("bwa-align")
     os.mkdir("ngm-align")
 
+    """Run each program on the given sample"""
     for sample, reads in filepairs.items():
         forward = reads["R1"]
         reverse = reads["R2"]
@@ -76,7 +77,6 @@ def alignment(args):
     """SAMtools after to review"""
     os.mkdir("bwa-samtools-results")
     os.mkdir("ngm-samtools-results")
-
     for sample, reads in filepairs.items():
         bwasamtools = "samtools stats -@ " + threads + " ./bwa-align/" + sample + "_bwaalign.bam > ./bwa-samtools-results/" + sample + "_stats.txt"
         ngmsamtools = "samtools stats -@ " + threads + " ./ngm-align/" + sample + "_ngmalign.bam > ./ngm-samtools-results/" + sample + "_stats.txt"
