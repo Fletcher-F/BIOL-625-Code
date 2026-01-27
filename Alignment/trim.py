@@ -25,7 +25,8 @@ def argument_parser():
     """Return arguments"""
     return parser.parse_args()
 
-"""Check valid fasta"""
+"""Check valid fasta
+Validates specific input format specified in GitHub."""
 def valid_fastq(file):
     if os.path.splitext(file)[1] not in (".fastq.gz"):
         print("Invalid fastq.gz files in directory...")
