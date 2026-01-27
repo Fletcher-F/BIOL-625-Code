@@ -1,4 +1,7 @@
 """Trim Raw Reads Script Test"""
+"""IMPORTANT: this script is not actually used for processing data.
+Rather this has been used to test input/output piping from various
+commands to troubleshoot past code."""
 
 """Importing libraries"""
 import os, subprocess, argparse, sys
@@ -27,7 +30,6 @@ def trim(args):
     path = args.input
     threads = args.threads
 
-    """Running Trimmomatic"""
     #os.mkdir("trimmed-paired")
     #os.mkdir("trimmed-unpaired")
 
