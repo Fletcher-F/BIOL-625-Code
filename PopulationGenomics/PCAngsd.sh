@@ -1,13 +1,15 @@
 #!/bin/bash
 #ANGSD script for preparing downstream analysis files
 
-#SBATCH --job-name=ANGSDadmixture
-#SBATCH --output=angsdmix.out
-#SBATCH --error=angsdmix.err
-#SBATCH --cpus-per-task=32
-#SBATCH --time=48:00:00
-#SBATCH --mem=64G
+#SBATCH --job-name=PCAngsd
+#SBATCH --output=/home/ffalk/links/scratch/pcangsd-maf1.out
+#SBATCH --error=/home/ffalk/links/scratch/pcangsd-maf1.err
+#SBATCH --nodes=1
+#SBATCH --cpus-per-task=64
+#SBATCH --time=12:00:00
+#SBATCH --account=def-jazjanes-ab
 
 module load angsd
 
-pcangsd --beagle genolike.beagle.gz --eig 2 --threads 32 --out pcangsd
+#Default maf is 0.05 trying both.
+pcangsd --beagle genolike.beagle.gz --maf 0.1 --eig 4 --threads 64 --out /home/ffalk/links/scratch/pcangsdmaf1
