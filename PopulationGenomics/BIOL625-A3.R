@@ -21,7 +21,7 @@ pop<-read.csv("popinfo.csv")
 popinfo <- setNames(pop$name, pop$population)
 
 #Read inferred admixture proportions file
-q<-read.table("k4-admix.qopt")
+q <- read.table("k4-admix.qopt")
 ord = order(popinfo)
 
 #plot base R barplot
@@ -45,4 +45,5 @@ plot(e$vectors[,1:2], col = pop$color, pch = 17, xlab = "PC1", ylab = "PC2")
 legend("topleft", legend = c("Microcarpa", "Albens", "Moluccana"), col = pop_colors, pch = 17)
 text(jitter(e$vectors[,1:2]), labels = pop$name, cex = 0.5, pos = 2)
 #hard to see labels with overlap but gives idea of samples for future reference
+
 #edit final plots in inkscape to fix label overlap
