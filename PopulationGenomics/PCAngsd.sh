@@ -12,4 +12,4 @@
 module load angsd
 
 #Default maf is 0.05 trying both.
-pcangsd --beagle genolike.beagle.gz --maf 0.1 --eig 4 --threads 64 --out /home/ffalk/links/scratch/pcangsdmaf1
+pcangsd --beagle genolike.beagle.gz --maf 0.05 --eig 4 --threads 64 --out /home/ffalk/links/scratch/pcangsdmaf1
