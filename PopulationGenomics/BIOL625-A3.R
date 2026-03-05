@@ -35,6 +35,10 @@ abline(v = cumsum(sapply(unique(pop[ord,1]), function(x){sum(pop[ord,1]==x)})), 
 C <- as.matrix(read.table("PCangsd.cov"))
 e <- eigen(C)
 
+#percentage variance from principal components
+variance <- e$values / sum(e$values) * 100
+variance[1:4]
+
 #population colors for legend
 pop_colors <- c("Pop1" = "red", "Pop2" = "blue", "Pop3" = "green")
 
@@ -45,5 +49,4 @@ plot(e$vectors[,1:2], col = pop$color, pch = 17, xlab = "PC1", ylab = "PC2")
 legend("topleft", legend = c("Microcarpa", "Albens", "Moluccana"), col = pop_colors, pch = 17)
 text(jitter(e$vectors[,1:2]), labels = pop$name, cex = 0.5, pos = 2)
 #hard to see labels with overlap but gives idea of samples for future reference
-
 #edit final plots in inkscape to fix label overlap
